@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+
+    <!-- LIST VIEW -->
+    <record id="view_study_plan_list" model="ir.ui.view">
+        <field name="name">study.plan.list</field>
+        <field name="model">university.study_plan</field>
+        <field name="arch" type="xml">
+
+            <list>
+                <field name="name"/>
+                <field name="career_id"/>
+            </list>
+
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_study_plan_form" model="ir.ui.view">
+        <field name="name">study.plan.form</field>
+        <field name="model">university.study_plan</field>
+        <field name="arch" type="xml">
+
+            <form>
+                <sheet>
+
+                    <group>
+                        <field name="name"/>
+                        <field name="career_id"/>
+                    </group>
+
+                    <notebook>
+
+                        <page string="Subjects">
+
+                            <field name="subject_ids">
+
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                </list>
+
+                            </field>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_study_plans" model="ir.actions.act_window">
+        <field name="name">Study Plans</field>
+        <field name="res_model">university.study_plan</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</data>
+</odoo>

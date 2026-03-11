@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+
+    <!-- Menú raíz -->
+    <menuitem
+        id="university_root_menu"
+        name="University"
+        sequence="10"/>
+
+    <!-- PROFESORES: Ponemos sequence="1" para que sea el PRIMERO en abrirse -->
+    <menuitem
+        id="menu_professors"
+        name="Professors"
+        parent="university_root_menu"
+        action="action_professors"
+        sequence="1"
+        groups="university.group_university_academic,university.group_university_finance"/>
+
+    <!-- ESTUDIANTES: Ponemos sequence="2" o más alto -->
+    <menuitem
+        id="menu_students"
+        name="Students"
+        parent="university_root_menu"
+        action="action_students"
+        sequence="2"
+        groups="university.group_university_academic"/>
+
+    <!-- El resto de menús pueden tener sequence="3", "4", etc. -->
+    
+    <menuitem
+        id="menu_subjects"
+        name="Subjects"
+        parent="university_root_menu"
+        action="action_subjects"
+        sequence="3"
+        groups="university.group_university_academic"/>
+
+    <menuitem
+        id="menu_enrollments"
+        name="Enrollments"
+        parent="university_root_menu"
+        action="action_enrollments"
+        sequence="4"
+        groups="university.group_university_academic"/>
+
+    <menuitem
+        id="menu_careers"
+        name="Careers"
+        parent="university_root_menu"
+        action="action_careers"
+        sequence="5"
+        groups="university.group_university_academic"/>
+
+    <menuitem
+        id="menu_study_plans"
+        name="Study Plans"
+        parent="university_root_menu"
+        action="action_study_plans"
+        sequence="6"
+        groups="university.group_university_academic"/>
+
+</data>
+</odoo>
